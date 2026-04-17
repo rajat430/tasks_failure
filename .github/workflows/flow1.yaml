@@ -22,6 +22,6 @@ jobs:
       - name: task4
         if: always()
         run: |
-          echo "Task4 should always run if error occured or not"
+          echo "Task4 should always run if error occured or not."
       
         
