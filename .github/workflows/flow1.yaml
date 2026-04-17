@@ -1,0 +1,27 @@
+name: flow1
+on:
+  pull_request:
+    branches: [dev,main]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: task1
+        run: |
+          echo "Task 1 is succesful"
+          
+      - name: task2
+        continue-on-error: true
+        run: |
+          echo "Tasks2 may have issues"
+          exit 1
+      - name: task3
+        run: |
+          echo "Task3 will always failed"
+          exit 1
+      - name: task4
+        if: always()
+        run: |
+          echo "Task4 should always run if error occured or not"
+      
+        
