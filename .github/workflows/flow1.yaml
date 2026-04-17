@@ -1,7 +1,7 @@
 name: flow1
 on:
   pull_request:
-    types: [closed, opened]
+    types: [closed, opened, synchronize]
     branches: [develop,main]
 jobs:
   job1:
