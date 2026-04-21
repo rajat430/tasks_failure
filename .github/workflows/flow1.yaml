@@ -15,11 +15,12 @@ jobs:
           echo "Tasks2 may have issues"
           exit 1
       - name: task3
+        id: task3
         run: |
           echo "Task3 will always failed"
           exit 1
       - name: task4
-        if: always()
+        condition: ne(dependencies.task3.result, 'skipped')
         run: |
           echo "Task4 should always run if error occured or not."
       
