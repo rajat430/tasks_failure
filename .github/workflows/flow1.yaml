@@ -19,7 +19,6 @@ jobs:
         id: task3
         run: |
           echo "Task3 will always failed"
-          exit 1
       - name: task4
         if: ${{ steps.task3.outcome !='skipped' && always()}}
         run: |
