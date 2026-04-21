@@ -8,7 +8,6 @@ jobs:
       - name: task1
         run: |
           echo "Task 1 is succesful"
-          exit 1
           
       - name: task2
         continue-on-error: true
