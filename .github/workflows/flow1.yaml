@@ -20,7 +20,7 @@ jobs:
           echo "Task3 will always failed"
           exit 1
       - name: task4
-        if: steps.task3.outcome !='skipped'
+        if: ${{ steps.task3.outcome !='skipped' && always()}}
         run: |
           echo "Task4 should always run if error occured or not."
       
